@@ -15,10 +15,9 @@
           src = ./.;
 
           # First run with a fake hash; Nix will print the correct vendorHash.
-          vendorHash = pkgs.lib.fakeHash;
+          vendorHash = "sha256-XKwtq8EF774lHLHtyFzveFa5agJa15CvhsuwwaQdJwU";
 
           # If you split binaries later, enable: subPackages = [ "cmd/gonzo" ];
-          CGO_ENABLED = 0;
           ldflags = [ "-s" "-w" ];
 
           meta = with pkgs.lib; {

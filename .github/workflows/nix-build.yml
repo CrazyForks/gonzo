@@ -31,7 +31,7 @@ jobs:
 
       # Build your default package (defined in flake.nix)
       - name: nix build
-        run: nix build .#default --print-build-logs
+        run: nix build .#default --extra-experimental-features nix-command --extra-experimental-features flakes --print-build-logs
 
       # Smoke test the built binary
       - name: Run gonzo --version
